@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>Our Pokemon:</h1>
+    {% for poke in pokemon %}
+    <h3>Name: {{poke.name}}</h3>
+    <h3>Number: {{poke.number}}</h3>
+    <h3>Kind:: {{poke.kind}}</h3>
+    {% endfor %}
+{% endblock %}
