@@ -18,10 +18,10 @@ class Poke:
         self.type = kind
 
 pokemon = [
-    Poke("Bulbasaur", 001, "Grass"),
-    Poke("Charmander", 004, "Fire"),
-    Poke("Squirtle", 007, "Water"),
-    Poke("Pikachu", 025, "Electric"),
+    Poke("Bulbasaur", 1, "Grass"),
+    Poke("Charmander", 4, "Fire"),
+    Poke("Squirtle", 7, "Water"),
+    Poke("Pikachu", 25, "Electric"),
 ]
 
 class Poke_List(TemplateView):
