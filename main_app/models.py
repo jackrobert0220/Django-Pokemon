@@ -28,3 +28,5 @@ class Poke(models.Model):
     
     class Meta:
             ordering = ['name']
+
+
