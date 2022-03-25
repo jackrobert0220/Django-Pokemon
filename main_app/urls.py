@@ -8,4 +8,5 @@ urlpatterns = [
     path('about/', views.About.as_view(), name="about"),
     path('pokemon/new/', views.PokeCreate.as_view(), name="poke_create"),
     path('pokemon/<int:pk>/', views.PokeDetail.as_view(), name="poke_detail"),
+    path('pokemon/<int:pk>/update', views.PokeUpdate.as_view(), name="poke_update")
 ]

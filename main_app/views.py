@@ -3,8 +3,9 @@ from django.views import View
 from django.http import HttpResponse
 from django.views.generic.base import TemplateView
 from .models import Poke
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, UpdateView
 from django.views.generic import DetailView
+from django.urls import reverse
 
 # Create your views here.
 class Home(TemplateView):
@@ -33,8 +34,21 @@ class PokeCreate(CreateView):
     model = Poke
     fields = ['name', 'img', 'number', 'type']
     template_name = "poke_create.html"
-    success_url = "/pokemon/"
+    #OLD create sucess redirect
+    # success_url = "/pokemon/"
+    #NEW create success redirect
+    def get_success_url(self):
+        return reverse('poke_detail', kwargs={'pk': self.object.pk})
 
 class PokeDetail(DetailView):
     model = Poke
     template_name = "poke_detail.html"
+
+class PokeUpdate(UpdateView):
+    model = Pokefields = ['name', 'img', 'number', 'type']
+    template_name = "poke_update.html"
+    #OLD success redirect
+    # success_url = "/pokemon"
+    #NEW success redirect
+    def get_success_url(self):
+        return reverse('poke_detail', kwargs={'pk': self.object.pk})

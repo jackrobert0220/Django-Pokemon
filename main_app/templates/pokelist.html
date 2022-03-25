@@ -12,12 +12,14 @@
     <h1>{{header}}</h1>
     {% for poke in pokemon %}
     <img src="{{poke.img}}" alt="{{poke.name}}">
+        <a href="{% url 'poke_detail' poke.pk %}">
+            <h3>Name: {{poke.name}}</h3>
+        </a>
+        <h3>Number: {{poke.number}}</h3>
+        <h3>Type: {{poke.type}}</h3>
+        <p>Adopted by:
+            <a href="/user/{{ poke.user.username }}">{{ poke.user.username }}</a>
+        </p>
   
-    <h3>Name: {{poke.name}}</h3>
-    <h3>Number: {{poke.number}}</h3>
-    <h3>Type: {{poke.type}}</h3>
-    <p>Adopted by:
-        <a href="/user/{{ poke.user.username }}">{{ poke.user.username }}</a>
-    </p>
     {% endfor %}
 {% endblock %}
