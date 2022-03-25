@@ -1,7 +1,14 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>Our Pokemon:</h1>
+    <form>
+        <div>
+            <input type="text" name="name" placeholder="name"/>
+            <input type="submit" value="Search"/>
+        </div>
+        <a href="{% url 'poke_list' %}">Clear Search</a>
+    </form>
+    <h1>{{header}}</h1>
     {% for poke in pokemon %}
     <img src="{{poke.img}}" alt="{{poke.name}}">
   
