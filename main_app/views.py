@@ -10,20 +10,6 @@ class Home(TemplateView):
 class About(TemplateView):
     template_name = 'about.html'
 
-class Poke:
-
-    def __init__(self, name, number, kind):
-        self.name = name
-        self.number = number
-        self.type = kind
-
-pokemon = [
-    Poke("Bulbasaur", 1, "Grass"),
-    Poke("Charmander", 4, "Fire"),
-    Poke("Squirtle", 7, "Water"),
-    Poke("Pikachu", 25, "Electric"),
-]
-
 class Poke_List(TemplateView):
     template_name = 'pokelist.html'
 
@@ -31,3 +17,11 @@ class Poke_List(TemplateView):
         context = super().get_context_data(**kwargs)
         context['pokemon'] = pokemon
         return context
+
+class Poke:
+
+    def __init__(self, name, number, type):
+        self.name = name
+        self.number = number
+        self.type = type
+
