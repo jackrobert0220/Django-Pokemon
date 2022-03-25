@@ -4,6 +4,7 @@ from django.http import HttpResponse
 from django.views.generic.base import TemplateView
 from .models import Poke
 from django.views.generic.edit import CreateView
+from django.views.generic import DetailView
 
 # Create your views here.
 class Home(TemplateView):
@@ -33,3 +34,7 @@ class PokeCreate(CreateView):
     fields = ['name', 'img', 'number', 'type']
     template_name = "poke_create.html"
     success_url = "/pokemon/"
+
+class PokeDetail(DetailView):
+    model = Poke
+    template_name = "poke_detail.html"

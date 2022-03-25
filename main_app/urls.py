@@ -6,5 +6,6 @@ urlpatterns = [
     path('', views.Home.as_view(), name="home"),
     path('pokemon/', views.Poke_List.as_view(), name="poke_list"),
     path('about/', views.About.as_view(), name="about"),
-    path('pokemon/new/', views.PokeCreate.as_view(), name="poke_create")
+    path('pokemon/new/', views.PokeCreate.as_view(), name="poke_create"),
+    path('pokemon/<int:pk>/', views.PokeDetail.as_view(), name="poke_detail"),
 ]
