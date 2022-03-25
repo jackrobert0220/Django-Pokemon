@@ -3,6 +3,7 @@ from django.views import View
 from django.http import HttpResponse
 from django.views.generic.base import TemplateView
 from .models import Poke
+from django.views.generic.edit import CreateView
 
 # Create your views here.
 class Home(TemplateView):
@@ -26,3 +27,9 @@ class Poke_List(TemplateView):
             context['pokemon'] = Poke.objects.all() # this is where we add the key into our context object for the view to use
             context['header'] = "Our Pokemon"
         return context
+
+class PokeCreate(CreateView):
+    model = Poke
+    fields = ['name', 'img', 'number', 'type']
+    template_name = "poke_create.html"
+    success_url = "/pokemon/"
