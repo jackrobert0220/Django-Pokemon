@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+    <h1>{{ username }}'s Collection</h1>
+
+    {% for poke in pokemon %}
+        <a href="/pokemon/{{ poke.id }}">
+            <h3>{{ poke.name }}</h3>
+        </a>
+
+    {% endfor %}
+
+{% endblock %}
