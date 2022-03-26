@@ -13,7 +13,7 @@ urlpatterns = [
     path('user/<username>/', views.profile, name='profile'),
     path('pokemoves/', views.pokemoves_index, name='pokemoves_index'),
     path('pokemoves/<int:pokemove_id>', views.pokemoves_show, name='pokemoves_show'),
-    path('pokemoves/create/', views.PokeMoveCreate.as_view(), name='pokemoves_create'),
-    path('pokemoves/<int:pk>/update/', views.PokeMoveUpdate.as_view(), name='pokemoves_update'),
-    path('pokemoves/<int:pk>/delete/', views.PokeMoveDelete.as_view(), name='pokemoves_delete'),
+    path('pokemoves/create/', views.PokeMove_Create.as_view(), name='pokemoves_create'),
+    path('pokemoves/<int:pk>/update/', views.PokeMove_Update.as_view(), name='pokemoves_update'),
+    path('pokemoves/<int:pk>/delete/', views.PokeMove_Delete.as_view(), name='pokemoves_delete'),
 ]
