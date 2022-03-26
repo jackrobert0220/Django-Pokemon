@@ -16,4 +16,7 @@ urlpatterns = [
     path('pokemoves/create/', views.PokeMove_Create.as_view(), name='pokemoves_create'),
     path('pokemoves/<int:pk>/update/', views.PokeMove_Update.as_view(), name='pokemoves_update'),
     path('pokemoves/<int:pk>/delete/', views.PokeMove_Delete.as_view(), name='pokemoves_delete'),
+    path('login/', views.login_view, name='login'),
+    path('logout/', views.logout_view, name='logout'),
+    path('signup/', views.signup_view, name='signup'),
 ]
