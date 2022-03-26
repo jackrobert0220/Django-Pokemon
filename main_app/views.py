@@ -63,7 +63,7 @@ class Poke_Update(UpdateView):
 class Poke_Delete(DeleteView):
     model = Poke
     template_name = "poke_delete_confirmation.html"
-    success_url = "/cats/"
+    success_url = "/pokemon/"
 
 #Profile for the User
 def profile(request, username):
