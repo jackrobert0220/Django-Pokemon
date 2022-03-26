@@ -42,7 +42,8 @@ class Poke(models.Model):
     number = models.IntegerField()
     type = models.CharField(max_length=10, choices = TYPE_CHOICES)
     #USER implementation
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE) # 1:M example
+    pokemoves = models.ManyToManyField(PokeMove) # M:M example
 
     created_at = models.DateTimeField(auto_now_add=True)
 

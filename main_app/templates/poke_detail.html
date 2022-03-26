@@ -14,7 +14,15 @@
     <p>Adopted by:
         <a href="/user/{{ poke.user.username }}">{{ poke.user.username }}</a>
     </p>
+
+    <h3>Moves owned:</h3>
+    {% for pokemove in poke.pokemoves.all %}
+        <div>{{ pokemove.name }}</div>
+    {% empty %}
+        <div> Pokemon has no moves 🙁</div>
+    {% endfor %}
 </div>
+
 <div>
     <a href="{% url 'poke_update' poke.pk %}">Update</a>
     <a href="{% url 'poke_delete' poke.pk %}">Delete</a>

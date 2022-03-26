@@ -33,7 +33,7 @@ class Poke_List(TemplateView):
 
 class Poke_Create(CreateView):
     model = Poke
-    fields = ['name', 'img', 'number', 'type', 'user']
+    fields = ['name', 'img', 'number', 'type', 'user', 'pokemoves']
     template_name = "poke_create.html"
     #OLD create sucess redirect
     # success_url = "/pokemon/"
@@ -52,7 +52,7 @@ class Poke_Detail(DetailView):
 
 class Poke_Update(UpdateView):
     model = Poke
-    fields = ['name', 'img', 'number', 'type']
+    fields = ['name', 'img', 'number', 'type', 'pokemoves']
     template_name = "poke_update.html"
     #OLD success redirect
     # success_url = "/pokemon"
