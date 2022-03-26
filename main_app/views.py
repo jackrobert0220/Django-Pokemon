@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.views import View
 from django.http import HttpResponse, HttpResponseRedirect #Responses
 from django.views.generic.base import TemplateView
-from .models import Poke
+from .models import Poke, PokeMove
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic import DetailView
 from django.urls import reverse
@@ -70,3 +70,30 @@ def profile(request, username):
     user = User.objects.get(username=username)
     pokemon = Poke.objects.filter(user=user)
     return render(request, 'profile.html', {'username': username, 'pokemon': pokemon})
+
+
+#PokeMoves view functions
+def pokemoves_index(request):
+    pokemoves = PokeMove.objects.all()
+    return render(request, 'pokemove_index.html', {'pokemoves': pokemoves})
+
+def pokemoves_show(request, pokemove_id):
+    pokemove = PokeMove.objects.get(id=pokemove_id)
+    return render(request, 'pokemove_show.html', {'pokemove': pokemove})
+
+class PokeMove_Create(CreateView):
+    model = PokeMove
+    fields = '__all__'
+    template_name = "pokemove_form.html"
+    success_url = '/pokemoves'
+
+class PokeMove_Update(UpdateView):
+    model = PokeMove
+    fields = ['name', 'type']
+    template_name = "pokemove_update.html"
+    success_url = '/pokemoves'
+
+class PokeMove_Delete(DeleteView):
+    model = PokeMove
+    template_name = "pokemove_confirm_delete.html"
+    success_url = '/pokemoves'
