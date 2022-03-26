@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Pokemon Move List</h1>
+
+    {% for pokemove in pokemoves %}
+        <div>
+            <a href="{% url 'pokemoves_show' pokemove.id %}">
+                <div class="card-content">
+                    <span>{{ pokemove.name }}</span>
+                    <p>Type: {{ pokemove.type }}</p>
+                </div>
+            </a>
+        </div>
+        <hr/>
+    {% endfor %}
+
+{% endblock %}
