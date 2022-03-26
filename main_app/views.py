@@ -3,7 +3,7 @@ from django.views import View
 from django.http import HttpResponse
 from django.views.generic.base import TemplateView
 from .models import Poke
-from django.views.generic.edit import CreateView, UpdateView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic import DetailView
 from django.urls import reverse
 
@@ -30,7 +30,7 @@ class Poke_List(TemplateView):
             context['header'] = "Our Pokemon"
         return context
 
-class PokeCreate(CreateView):
+class Poke_Create(CreateView):
     model = Poke
     fields = ['name', 'img', 'number', 'type']
     template_name = "poke_create.html"
@@ -40,15 +40,21 @@ class PokeCreate(CreateView):
     def get_success_url(self):
         return reverse('poke_detail', kwargs={'pk': self.object.pk})
 
-class PokeDetail(DetailView):
+class Poke_Detail(DetailView):
     model = Poke
     template_name = "poke_detail.html"
 
-class PokeUpdate(UpdateView):
-    model = Pokefields = ['name', 'img', 'number', 'type']
+class Poke_Update(UpdateView):
+    model = Poke
+    fields = ['name', 'img', 'number', 'type']
     template_name = "poke_update.html"
     #OLD success redirect
     # success_url = "/pokemon"
     #NEW success redirect
     def get_success_url(self):
         return reverse('poke_detail', kwargs={'pk': self.object.pk})
+
+class Poke_Delete(DeleteView):
+    model = Poke
+    template_name = "poke_delete_confirmation.html"
+    success_url = "/cats/"
