@@ -3,15 +3,15 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 TYPE_CHOICES = (
-    ("e", "electric"),
-    ("d", "dragon"),
-    ("f", "fire"),
-    ("g", "ghost"),
-    ("n", "normal"),
-    ("p", "plant"),
-    ("ps", "psychic"),
-    ("r", "rock"),
-    ("w", "water"),
+    ("Electric", "Electric"),
+    ("Dragon", "Dragon"),
+    ("Fire", "Fire"),
+    ("Ghost", "Ghost"),
+    ("Normal", "Normal"),
+    ("Plant", "Plant"),
+    ("Psychic", "Psychic"),
+    ("Rock", "Rock"),
+    ("Water", "Water"),
 )
 
 
@@ -23,15 +23,15 @@ class PokeMove(models.Model):
         return self.name
 
 TYPE_CHOICES = (
-    ("e", "electric"),
-    ("d", "dragon"),
-    ("f", "fire"),
-    ("g", "ghost"),
-    ("n", "normal"),
-    ("p", "plant"),
-    ("ps", "psychic"),
-    ("r", "rock"),
-    ("w", "water"),
+    ("Electric", "Electric"),
+    ("Dragon", "Dragon"),
+    ("Fire", "Fire"),
+    ("Ghost", "Ghost"),
+    ("Normal", "Normal"),
+    ("Plant", "Plant"),
+    ("Psychic", "Psychic"),
+    ("Rock", "Rock"),
+    ("Water", "Water"),
 )
 
 
