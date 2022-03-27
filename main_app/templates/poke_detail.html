@@ -23,9 +23,11 @@
     {% endfor %}
 </div>
 
+{% if user.is_authenticated %}
 <div>
     <a href="{% url 'poke_update' poke.pk %}">Update</a>
     <a href="{% url 'poke_delete' poke.pk %}">Delete</a>
 </div>
+{% endif %}
 
 {% endblock %}
