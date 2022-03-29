@@ -8,7 +8,7 @@
             <h2>{{ pokemove.name }}</h2>
             <p>Type: {{ pokemove.type }}</p>
             <p>Owned by:</p>
-            {% for pokemove in pokemove.poke_set.all %}
+            {% for poke in pokemove.poke_set.all %}
                 <p>{{ poke.name }}</p>
             {% empty %}
                 <p>Nobody has this move 😝</p>
